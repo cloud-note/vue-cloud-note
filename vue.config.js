@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'vue Admin Template' // page title
+const name = defaultSettings.title || 'vue Cloud Note' // page title
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
@@ -31,7 +31,7 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     port: port,
-    open: true,
+    open: false,
     overlay: {
       warnings: false,
       errors: true
@@ -49,8 +49,8 @@ module.exports = {
     }
   },
   chainWebpack(config) {
-    config.plugins.delete('preload') // TODO: need test
-    config.plugins.delete('prefetch') // TODO: need test
+    config.plugins.delete('preload')
+    config.plugins.delete('prefetch')
 
     // set svg-sprite-loader
     config.module
